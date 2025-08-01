@@ -170,6 +170,22 @@
                                 <span class="hide-menu">Pekerjaan</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="/admin/rentang-umur" class="sidebar-link">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-point"></i>
+                                </div>
+                                <span class="hide-menu">Rentang Umur</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/admin/kesehatan" class="sidebar-link">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-point"></i>
+                                </div>
+                                <span class="hide-menu">Komponen Kesehatan</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

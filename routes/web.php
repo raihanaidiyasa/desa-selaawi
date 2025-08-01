@@ -41,6 +41,12 @@ use App\Http\Controllers\AdminJenisKelaminController;
 use App\Http\Controllers\AdminVideoProfileController;
 use App\Http\Controllers\AdminPerangkatDesaController;
 use App\Http\Controllers\AdminIdentitasSitusController;
+use App\Http\Controllers\AdminRentangUmurController;
+use App\Http\Controllers\AdminPendidikanController;
+use App\Http\Controllers\AdminLembagaPendidikanController;
+use App\Http\Controllers\AdminKesehatanController;
+use App\Http\Controllers\AdminEkonomiController;
+use App\Http\Controllers\AdminPertanianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,64 +99,74 @@ Route::get('/apbdesa/{anggaran:slug}', [AnggaranController::class, 'detail']);
 //Admin Dashboard 
 Auth::routes();
 
-Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 
-Route::resource('/admin/slider', AdminSliderController::class);
+    Route::resource('/admin/slider', AdminSliderController::class);
 
-Route::get('/admin/berita/slug', [AdminBeritaController::class, 'slug']);
-Route::resource('/admin/berita', AdminBeritaController::class);
+    Route::get('/admin/berita/slug', [AdminBeritaController::class, 'slug']);
+    Route::resource('/admin/berita', AdminBeritaController::class);
 
-Route::get('/admin/komentar', [AdminCommentController::class, 'index']);
-Route::delete('/admin/komentar/{id}', [AdminCommentController::class, 'destroy']);
+    Route::get('/admin/komentar', [AdminCommentController::class, 'index']);
+    Route::delete('/admin/komentar/{id}', [AdminCommentController::class, 'destroy']);
 
-Route::get('/admin/kategori/slug', [AdminKategoriController::class, 'slug']);
-route::resource('/admin/kategori', AdminKategoriController::class);
+    Route::get('/admin/kategori/slug', [AdminKategoriController::class, 'slug']);
+    route::resource('/admin/kategori', AdminKategoriController::class);
 
-Route::get('admin/wilayah', [AdminWilayahController::class, 'index']);
-Route::get('admin/wilayah/{id}/edit', [AdminWilayahController::class, 'edit']);
-Route::put('admin/wilayah/{id}', [AdminWilayahController::class, 'update']);
+    Route::get('admin/wilayah', [AdminWilayahController::class, 'index']);
+    Route::get('admin/wilayah/{id}/edit', [AdminWilayahController::class, 'edit']);
+    Route::put('admin/wilayah/{id}', [AdminWilayahController::class, 'update']);
 
-Route::get('admin/sejarah', [AdminSejarahController::class, 'index']);
-Route::get('admin/sejarah/{id}/edit', [AdminSejarahController::class, 'edit']);
-Route::put('admin/sejarah/{id}', [AdminSejarahController::class, 'update']);
+    Route::get('admin/sejarah', [AdminSejarahController::class, 'index']);
+    Route::get('admin/sejarah/{id}/edit', [AdminSejarahController::class, 'edit']);
+    Route::put('admin/sejarah/{id}', [AdminSejarahController::class, 'update']);
 
-Route::get('admin/visi-misi', [AdminVisiMisiController::class, 'index']);
-Route::get('admin/visi-misi/{id}/edit', [AdminVisiMisiController::class, 'edit']);
-Route::put('admin/visi-misi/{id}', [AdminVisiMisiController::class, 'update']);
+    Route::get('admin/visi-misi', [AdminVisiMisiController::class, 'index']);
+    Route::get('admin/visi-misi/{id}/edit', [AdminVisiMisiController::class, 'edit']);
+    Route::put('admin/visi-misi/{id}', [AdminVisiMisiController::class, 'update']);
 
-Route::resource('admin/perangkat-desa', AdminPerangkatDesaController::class);
+    Route::resource('admin/perangkat-desa', AdminPerangkatDesaController::class);
 
-Route::get('/admin/peta-desa', [AdminPetaController::class, 'index']);
-Route::put('/admin/peta-desa/{id}', [AdminPetaController::class, 'update']);
+    Route::get('/admin/peta-desa', [AdminPetaController::class, 'index']);
+    Route::put('/admin/peta-desa/{id}', [AdminPetaController::class, 'update']);
 
-Route::resource('admin/agama', AdminAgamaController::class);
+    Route::resource('admin/agama', AdminAgamaController::class);
 
-Route::resource('admin/jenis-kelamin', AdminJenisKelaminController::class);
+    Route::resource('admin/jenis-kelamin', AdminJenisKelaminController::class);
 
-Route::resource('admin/pekerjaan', AdminPekerjaanController::class);
+    Route::resource('admin/pekerjaan', AdminPekerjaanController::class);
 
-Route::get('/admin/umkm/slug', [AdminUmkmController::class, 'slug']);
-Route::resource('admin/umkm', AdminUmkmController::class);
+    Route::get('/admin/umkm/slug', [AdminUmkmController::class, 'slug']);
+    Route::resource('admin/umkm', AdminUmkmController::class);
 
-Route::get('/admin/kontak', [AdminKontakController::class, 'index']);
-Route::put('/admin/kontak/{id}', [AdminKontakController::class, 'update']);
+    Route::get('/admin/kontak', [AdminKontakController::class, 'index']);
+    Route::put('/admin/kontak/{id}', [AdminKontakController::class, 'update']);
 
-Route::get('/admin/video-profile', [AdminVideoProfileController::class, 'index']);
-Route::put('/admin/video-profile/{id}', [AdminVideoProfileController::class, 'update']);
+    Route::get('/admin/video-profile', [AdminVideoProfileController::class, 'index']);
+    Route::put('/admin/video-profile/{id}', [AdminVideoProfileController::class, 'update']);
 
-Route::get('/admin/identitas-situs/', [AdminIdentitasSitusController::class, 'index']);
-Route::put('/admin/identitas-situs/{id}', [AdminIdentitasSitusController::class, 'update']);
+    Route::get('/admin/identitas-situs/', [AdminIdentitasSitusController::class, 'index']);
+    Route::put('/admin/identitas-situs/{id}', [AdminIdentitasSitusController::class, 'update']);
 
-Route::get('/admin/profil/', [AdminProfilController::class, 'index']);
-Route::put('/admin/profil/{id}', [AdminProfilController::class, 'update']);
-Route::put('/admin/profil/', [AdminProfilController::class, 'changePassword']);
+    Route::get('/admin/profil/', [AdminProfilController::class, 'index']);
+    Route::put('/admin/profil/{id}', [AdminProfilController::class, 'update']);
+    Route::put('/admin/profil/', [AdminProfilController::class, 'changePassword']);
 
-Route::resource('/admin/layanan', AdminLayananController::class);
+    Route::resource('/admin/layanan', AdminLayananController::class);
 
-Route::resource('/admin/gallery', AdminGalleryController::class);
+    Route::resource('/admin/gallery', AdminGalleryController::class);
 
-Route::get('/admin/pengumuman/slug', [AdminAnnouncementController::class, 'slug']);
-Route::resource('/admin/pengumuman', AdminAnnouncementController::class);
+    Route::get('/admin/pengumuman/slug', [AdminAnnouncementController::class, 'slug']);
+    Route::resource('/admin/pengumuman', AdminAnnouncementController::class);
 
-Route::get('/admin/apbdes', [AdminAnggaranController::class, 'slug']);
-Route::resource('/admin/apbdes', AdminAnggaranController::class);
+    Route::get('/admin/apbdes', [AdminAnggaranController::class, 'slug']);
+    Route::resource('/admin/apbdes', AdminAnggaranController::class);
+
+    Route::resource('/admin/rentang-umur', AdminRentangUmurController::class);
+    Route::resource('/admin/pendidikan', AdminPendidikanController::class);
+    Route::resource('/admin/kesehatan', AdminKesehatanController::class);
+    Route::resource('/admin/lembaga-pendidikan', AdminLembagaPendidikanController::class);
+    Route::resource('/admin/ekonomi', AdminEkonomiController::class);
+    Route::resource('/admin/pertanian', AdminPertanianController::class);
+});
+

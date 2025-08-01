@@ -41,9 +41,9 @@
       </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>2025</span></strong>. || Repost By : <a href="https://www.youtube.com/@kaseps8304/videos">Kasep_Code</a>
       </div>
-    </div>
+    </div> -->
   </footer><!-- End Footer -->

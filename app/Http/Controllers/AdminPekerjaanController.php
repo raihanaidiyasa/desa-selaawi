@@ -34,7 +34,7 @@ class AdminPekerjaanController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'pekerjaan' => 'required',
-            'jumlah'    => 'required|nume ric'
+            'jumlah'    => 'required|numeric'
         ], [
             'pekerjaan.required'  => 'Form pekerjaan tidak boleh kosong !',
             'jumlah'              => 'Form jumlah jumlah tidak boleh kosong !',

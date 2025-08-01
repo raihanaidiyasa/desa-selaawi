@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Website Portal Desa Cibuni</title>
+  <title>Website Portal Desa Selaawi</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,6 +30,7 @@
   <link href="/assets/css/style.css" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 </head>
 
 <body>
