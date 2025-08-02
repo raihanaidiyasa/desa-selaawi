@@ -186,6 +186,38 @@
                                 <span class="hide-menu">Komponen Kesehatan</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="/admin/pendidikan" class="sidebar-link">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-point"></i>
+                                </div>
+                                <span class="hide-menu">Pendidikan</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/admin/lembaga-pendidikan" class="sidebar-link">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-point"></i>
+                                </div>
+                                <span class="hide-menu">Lembaga Pendidikan</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/admin/ekonomi" class="sidebar-link">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-point"></i>
+                                </div>
+                                <span class="hide-menu">Ekonomi</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/admin/pertanian" class="sidebar-link">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-point"></i>
+                                </div>
+                                <span class="hide-menu">Hasil Pertanian</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
