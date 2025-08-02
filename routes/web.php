@@ -167,6 +167,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/admin/kesehatan', AdminKesehatanController::class);
     Route::resource('/admin/lembaga-pendidikan', AdminLembagaPendidikanController::class);
     Route::resource('/admin/ekonomi', AdminEkonomiController::class);
-    Route::resource('/admin/pertanian', AdminPertanianController::class);
+    Route::resource('/admin/hasil-pertanian', AdminPertanianController::class);
 });
 

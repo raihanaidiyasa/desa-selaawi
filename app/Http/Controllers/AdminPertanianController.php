@@ -14,7 +14,7 @@ class AdminPertanianController extends Controller
      */
     public function index()
     {
-        return view('admin.pertanian.index', [
+        return view('admin.hasil-pertanian.index', [
             'pertanians'    => HasilPertanian::all()
         ]);
     }
@@ -24,7 +24,7 @@ class AdminPertanianController extends Controller
      */
     public function create()
     {
-        return view('admin.pertanian.create');
+        return view('admin.hasil-pertanian.create');
     }
 
     /**
@@ -45,7 +45,7 @@ class AdminPertanianController extends Controller
         ]);
 
         if($validator->fails()){
-            return redirect('/admin/pertanian/create')
+            return redirect('/admin/hasil-pertanian/create')
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -56,7 +56,7 @@ class AdminPertanianController extends Controller
             'hasil' => $request->hasil,
         ]);
         
-        return redirect('/admin/pertanian')->with('success', 'Berhasil menambahkan data pertanian');
+        return redirect('/admin/hasil-pertanian')->with('success', 'Berhasil menambahkan data pertanian');
     }
 
     /**
@@ -65,7 +65,7 @@ class AdminPertanianController extends Controller
     public function edit(string $id)
     {
         $pertanian = HasilPertanian::find($id);
-        return view('admin.pertanian.edit', [
+        return view('admin.hasil-pertanian.edit', [
             'pertanian'  => $pertanian
         ]);
     }
@@ -89,7 +89,7 @@ class AdminPertanianController extends Controller
         ]);
 
         if($validator->fails()){
-            return redirect('/admin/pertanian/' . $pertanian->id . '/edit')
+            return redirect('/admin/hasil-pertanian/' . $pertanian->id . '/edit')
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -100,7 +100,7 @@ class AdminPertanianController extends Controller
             'hasil' => $request->hasil,
         ]);
 
-        return redirect('/admin/pertanian')->with('success', 'Berhasil mengedit data pertanian !');
+        return redirect('/admin/hasil-pertanian')->with('success', 'Berhasil mengedit data pertanian !');
     }
 
     /**
@@ -110,6 +110,6 @@ class AdminPertanianController extends Controller
     {
         $pertanian = HasilPertanian::find($id);
         $pertanian->delete();
-        return redirect('/admin/pertanian')->with('success', 'Berhasil menghapus data pertanian !');
+        return redirect('/admin/hasil-pertanian')->with('success', 'Berhasil menghapus data pertanian !');
     }
 }

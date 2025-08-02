@@ -211,7 +211,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="/admin/pertanian" class="sidebar-link">
+                            <a href="/admin/hasil-pertanian" class="sidebar-link">
                                 <div class="round-16 d-flex align-items-center justify-content-center">
                                     <i class="ti ti-point"></i>
                                 </div>
