@@ -9,9 +9,10 @@ class PerangkatDesaController extends Controller
 {
     public function index()
     {
-        $perangkatDesa = PerangkatDesa::all();
+        $perangkatDesas = PerangkatDesa::orderBy('id', 'DESC')->get();
+
         return view('perangkat-desa.index', [
-            'perangkatDesa' => $perangkatDesa
+            'perangkatDesas' => $perangkatDesas
         ]);
     }
 }

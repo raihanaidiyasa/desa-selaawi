@@ -5,11 +5,11 @@
     <div class="container">
   
       <div class="section-title">
-        <h2>Perangkat Desa Cibuni</h2>
+        <h2>Perangkat Desa Selaawi</h2>
       </div>
   
       <div class="row">
-        @foreach ($perangkatDesa as $perangkat)
+        @foreach ($perangkatDesas as $perangkat)
           <div class="col-xl-3 my-3" data-aos="fade-up">
               <div class="member">
                 <div class="pic"><img src="{{ asset('storage/' . $perangkat->foto) }}" class="img-fluid" alt=""></div>
